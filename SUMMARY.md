@@ -5,3 +5,4 @@
 ## Documentation
 
 * [Fundamentals](documentation/fundamentals.md)
+* [Jazzy](documentation/jazzy.md)
