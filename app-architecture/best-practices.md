@@ -38,5 +38,7 @@ Avoid references to globals dependencies as much as possible.
 
 It's OK to not always have perfectly testable code from the beginning. You can still refactor a bit later as long as it's not "next year" or after you have left the team.
 
+Focus on making those things modular and configurable that you are going to test first and most. Any v1 / v2 app will rarely have nor need 100% test coverage. You can still improve this later on in v3 or v4 if really needed and it will most of the time be OK.
+
 
 
