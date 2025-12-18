@@ -2,6 +2,10 @@
 
 * [Introduction](README.md)
 
+## App Architecture
+
+* [Best Practices](app-architecture/best-practices.md)
+
 ## Documentation
 
 * [Fundamentals](documentation/fundamentals.md)
