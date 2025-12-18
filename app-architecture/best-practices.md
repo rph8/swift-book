@@ -18,7 +18,7 @@ So it's better to use MVVM, or if you must VIPER. Both are useful evolutions fro
 
 
 
-#### Modularity and abstraction can also be bad
+### Modularity and abstraction can also be bad
 
 Unfortunately it is still taught in many courses and lectures that everything should be maximum modular. While modularity in general is great, you can overdo it and make your code hard to read.
 
@@ -30,7 +30,7 @@ Another example where abstraction often has to be flagged as YAGNI is concurrenc
 
 
 
-#### Build with testability in mind
+### Build with testability in mind
 
 Make everything that needs to be configured and independent from outside dependencies as local and modular as possible. Otherwise you can not isolate parts of your code to test it. Again, pragmatics is important: It's often not really useful to have a big wrapper around persistence but e.g. you must be able to not store things to the SSD but to an in-memory database when running tests. Either your persistence layer already brings this with it, otherwise you need to build it around it.
 
@@ -39,6 +39,16 @@ Avoid references to globals dependencies as much as possible.
 It's OK to not always have perfectly testable code from the beginning. You can still refactor a bit later as long as it's not "next year" or after you have left the team.
 
 Focus on making those things modular and configurable that you are going to test first and most. Any v1 / v2 app will rarely have nor need 100% test coverage. You can still improve this later on in v3 or v4 if really needed and it will most of the time be OK.
+
+
+
+### Build like a startup if you are one
+
+Maturity has its place. If you are a bank, maybe you need to test every centimeter of your app. Maybe that risk warning needs to be absolutely visible 100% of the time so the bank does not get sued.
+
+But I have seen startups where there apps had less than 100K users and it was not really in a regulated business like medical or finance and every single screen had snapshot tests. On the other hand, the app had some other architectural deficiencies that made it really difficult to extend it. It would have been a better use of time to refactor the app a bit than to have snapshot tests for every possible view in the app.
+
+Also consider that new products usually change their requirements a lot in the first few years because business cases and requirements tend to be "wrong" in the beginning until the right ones are discovered later. So don't try to perfectly engineer things that may be thrown away anyways soon enough unless there is a good reason. E.g. authentication and encryption must always be done properly to keep data safe even if you are a startup, but you still do not need 100% test coverage for the whole app from the first release on.
 
 
 
